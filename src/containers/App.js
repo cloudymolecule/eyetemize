@@ -2,7 +2,11 @@ import '../styles/App.css'
 
 function App() {
   return (
-    <div>App</div>
+    <div className='outer-container'>
+      <div className='inner-container'>
+        
+      </div>
+    </div>
   )
 }
 
