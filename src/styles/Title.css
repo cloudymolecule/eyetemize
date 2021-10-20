@@ -1,0 +1,9 @@
+.title {
+        /* font-family: Bilbo, handwriting; */
+        font-size: 80px;
+        font-weight: 100;
+        color: rgba(133, 133, 133, 1);
+        letter-spacing: 0.2px;
+        background: rgb(220,255,211);
+        background: linear-gradient(360deg, rgba(220,255,211,1) 50%, rgba(167,255,167,1) 78%);
+}

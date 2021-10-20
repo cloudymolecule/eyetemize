@@ -1,6 +1,6 @@
 .footer {
     background: rgb(167,255,167);
-    background: linear-gradient(90deg, rgba(167,255,167,0) 17%, rgba(167,255,167,1) 50%, rgba(167,255,167,0) 84%);color: #fff;
+background: linear-gradient(360deg, rgba(167,255,167,1) 11%, rgba(220,255,211,1) 94%);
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -8,5 +8,4 @@
     position: fixed;
     width: 100%;
     color: rgb(133, 133, 133);
-    font-weight: bold;
 }
