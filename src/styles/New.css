@@ -1,0 +1,21 @@
+.new-container {
+    
+    height: 50%;
+    width: 50%;
+    width: 50%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr;
+}
+
+.new-buttons {
+    margin-top: 2%;
+    text-align: center;
+}
+
+.new-input, .new-textarea {
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.4);
+}
