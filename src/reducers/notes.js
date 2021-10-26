@@ -21,6 +21,13 @@ const notes = (state = { notes: [], errors: [], loading: false}, action) => {
                     errors: [],
                     loading: false
                 }
+
+        case 'ADD_NOTES':
+            return {
+                ...state,
+                notes: action.notes,
+                loading: false
+            }
         
         case 'FORM_ERRORS':
             return {
