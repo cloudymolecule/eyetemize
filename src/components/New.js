@@ -1,5 +1,4 @@
 import '../styles/New.css'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { postNote } from '../actions/notes'
 import React, { Component } from 'react'
@@ -20,10 +19,10 @@ class New extends Component {
     handleSubmit = e => {
         e.preventDefault()
         console.log('submitted form')
-        // const formData = new FormData()
-        // formData.append(this.state.title)
-        // formData.append(this.state.content)
-        // this.props.postNote(formData)
+        const formData = new FormData()
+        formData.append('title', this.state.title)
+        formData.append('content', this.state.content)
+        this.props.postNote(formData)
     }
 
     handleReset = e => {
@@ -48,4 +47,9 @@ class New extends Component {
     }
 }
 
-export default New
+const mapStateToProps = state => ({ 
+    errors: state.notes.errors,
+    loading: state.notes.loading
+ })
+
+export default connect(mapStateToProps, { postNote })(New)
