@@ -1,0 +1,31 @@
+.notes-container {
+    height: 50%;
+    width: 50%;
+    width: 50%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 0.1fr 2fr 0.1fr;
+    gap: 10px;
+}
+
+.notes-list, .notes-content {
+    background-color: rgba(255, 255, 255, 0.4);
+    border:rgb(134, 255, 119);
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.notes-note-title, .notes-note-content {
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    color: rgb(58, 116, 0);
+}
+
+.notes-buttons {
+    margin-top: 2%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+}
