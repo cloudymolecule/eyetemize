@@ -1,7 +1,7 @@
-export const addNote = note => ({
-    type: 'ADD_NOTE',
-    note
-})
+// export const addNote = note => ({
+//     type: 'ADD_NOTE',
+//     note
+// })
 
 export const fetchNotes = () => {
     return (dispatch) => {

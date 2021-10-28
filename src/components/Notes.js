@@ -9,13 +9,27 @@ class Notes extends Component {
         this.props.fetchNotes()
     }
 
+    findNote = () => {
+
+    }
+
+    onNoteClick = () => {
+        console.log('hi')
+        // const noteCont = this.props.notes.notes.filter(({title}) => title ===)
+    }
+
+    iterateNoteTitles = () => {
+        const notesIt = this.props.notes.notes.map(n => <h4 onClick={this.onNoteClick()}>{n.title}</h4>)
+        return notesIt
+    }
+
     render() {
         return (
             <div className='notes-container'>
                 <div className='notes-note-title'>LIST</div>
                 <div className='notes-note-content'>NOTE</div>
                 <div className='notes-list'>
-                    test
+                    {this.iterateNoteTitles()}
                 </div>
                 <div className='notes-content'>
                     test
