@@ -5,34 +5,36 @@ import { fetchNotes } from '../actions/notes'
 
 class Notes extends Component {
     
+    state = {
+        content: ''
+    }
+
     componentDidMount() {
         this.props.fetchNotes()
     }
 
-    findNote = () => {
 
-    }
-
-    onNoteClick = () => {
-        console.log('hi')
-        // const noteCont = this.props.notes.notes.filter(({title}) => title ===)
+    onNoteClick = (id) => {
+        const noteCont = this.props.notes.notes.filter(note => id === note.id)
+        this.setState({content: noteCont[0].content})
     }
 
     iterateNoteTitles = () => {
-        const notesIt = this.props.notes.notes.map(n => <h4 onClick={this.onNoteClick()}>{n.title}</h4>)
+        const notesIt = this.props.notes.notes.map(n => <li className={'note-' + n.id} key={'note-' + n.id} onClick={() => {this.onNoteClick(n.id)}}>{n.title}</li>)
         return notesIt
     }
 
     render() {
+        
         return (
             <div className='notes-container'>
                 <div className='notes-note-title'>LIST</div>
                 <div className='notes-note-content'>NOTE</div>
-                <div className='notes-list'>
+                <ul className='notes-list'>
                     {this.iterateNoteTitles()}
-                </div>
+                </ul>
                 <div className='notes-content'>
-                    test
+                    {this.state.content}
                 </div>
                 <button className='button'>EDIT</button>
                 <button className='button'>DELETE</button>

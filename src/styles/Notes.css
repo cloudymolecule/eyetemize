@@ -1,3 +1,7 @@
+ul {
+    list-style-type: none;
+}
+
 .notes-container {
     height: 50%;
     width: 50%;
