@@ -18,6 +18,7 @@ ul {
     border:rgb(134, 255, 119);
     border-radius: 5px;
     border-style: solid;
+    overflow: scroll;
 }
 
 .notes-note-title, .notes-note-content {

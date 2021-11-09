@@ -6,7 +6,8 @@ import { fetchNotes } from '../actions/notes'
 class Notes extends Component {
     
     state = {
-        content: ''
+        content: '',
+        id: ''
     }
 
     componentDidMount() {
@@ -17,7 +18,7 @@ class Notes extends Component {
     onNoteClick = (id) => {
         const noteCont = this.props.notes.notes.filter(note => id === note.id)
         const selNote = document.getElementById(`note-${id}`)
-        this.setState({content: noteCont[0].content})
+        this.setState({content: noteCont[0].content, id: id})
         this.removeNoteClass()
         selNote.classList.add('notes-back-color')
     }
@@ -34,6 +35,10 @@ class Notes extends Component {
         return notesIt
     }
 
+    deleteNote = (id) => {
+        console.log(id)
+    }
+
     render() {
         
         return (
@@ -47,7 +52,7 @@ class Notes extends Component {
                     {this.state.content}
                 </div>
                 <button className='button'>EDIT</button>
-                <button className='button'>DELETE</button>
+                <button className='button' onClick={() => {this.deleteNote(this.state.id)}} >DELETE</button>
             </div>
         )
     }

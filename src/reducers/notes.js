@@ -28,18 +28,11 @@ const notes = (state = { notes: [], errors: [], loading: false}, action) => {
                 notes: action.notes,
                 loading: false
             }
-        
-        case 'FORM_ERRORS':
-            return {
-                ...state,
-                errors: action.formErrors,
-                loading: false
-            }
 
-        case 'RESET_ERRORS':
+        case 'DELETE_NOTE':
             return {
                 ...state,
-                errors: [],
+                notes: state.notes.filter(({ id }) => id !== action.id),
                 loading: false
             }
         
