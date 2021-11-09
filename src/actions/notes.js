@@ -27,19 +27,7 @@ export const postNote = note => {
 
 export const deleteNote = id => {
     return (dispatch) => {
-        let nObj = {id}
-        let configObj = {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(pObj)
-        }
-        fetch('http://127.0.0.1:3000/notes', configObj)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })       
+        fetch(`http://127.0.0.1:3000/notes/${id}`, { method: 'DELETE' })
+        .then(note => dispatch({ type: 'DELETE_NOTE', note}))
     }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../styles/Notes.css'
 import { connect } from 'react-redux'
 import { fetchNotes } from '../actions/notes'
+import { deleteNote } from '../actions/notes'
 
 class Notes extends Component {
     
@@ -36,7 +37,7 @@ class Notes extends Component {
     }
 
     deleteNote = (id) => {
-        console.log(id)
+        this.props.deleteNote(id)
     }
 
     render() {
@@ -65,4 +66,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchNotes })(Notes)
+export default connect(mapStateToProps, { fetchNotes, deleteNote })(Notes)
