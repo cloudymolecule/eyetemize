@@ -33,3 +33,7 @@ ul {
     grid-template-columns: 1fr 1fr;
     gap: 10%;
 }
+
+.notes-back-color {
+    background-color: aqua;
+}
