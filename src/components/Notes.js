@@ -15,7 +15,6 @@ class Notes extends Component {
         this.props.fetchNotes()
     }
 
-
     onNoteClick = (id) => {
         const noteCont = this.props.notes.notes.filter(note => id === note.id)
         const selNote = document.getElementById(`note-${id}`)
@@ -38,6 +37,8 @@ class Notes extends Component {
 
     deleteNote = (id) => {
         this.props.deleteNote(id)
+        document.getElementById(`note-${id}`).remove()
+        this.setState({content: ''})
     }
 
     render() {

@@ -19,9 +19,7 @@ export const postNote = note => {
         dispatch({ type: 'SAVING_NOTE' })
         fetch('http://127.0.0.1:3000/notes', {method: 'POST', body: note})
         .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })
+        
     }
 }
 
