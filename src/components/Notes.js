@@ -54,8 +54,7 @@ class Notes extends Component {
                 <div className='notes-content'>
                     {this.state.content}
                 </div>
-                <button className='button'><Link style={{ textDecoration: 'none', color: 'rgba(133, 133, 133, 1)' }} to='/new' >EDIT</Link></button>
-                {/* <button className='button'>EDIT</button> */}
+                <button className='button'><Link style={{ textDecoration: 'none', color: 'rgba(133, 133, 133, 1)' }} to={'/edit/' + this.state.id} params={{ id: this.state.id }} >EDIT</Link></button>
                 <button className='button' onClick={() => {this.deleteNote(this.state.id)}} >DELETE</button>
             </div>
         )

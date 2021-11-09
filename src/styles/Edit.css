@@ -1,0 +1,32 @@
+.edit-form {
+    height: 50%;
+    width: 50%;
+    width: 50%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr 0.2fr;
+    gap: 10px;
+}
+
+.edit-buttons {
+    margin-top: 2%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+}
+
+.edit-input, .edit-textarea {
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: rgb(134, 255, 119);
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.edit-textarea {
+    resize: none;
+}
+
