@@ -3,6 +3,7 @@ import '../styles/Notes.css'
 import { connect } from 'react-redux'
 import { fetchNotes } from '../actions/notes'
 import { deleteNote } from '../actions/notes'
+import { Link } from 'react-router-dom'
 
 class Notes extends Component {
     
@@ -53,7 +54,8 @@ class Notes extends Component {
                 <div className='notes-content'>
                     {this.state.content}
                 </div>
-                <button className='button'>EDIT</button>
+                <button className='button'><Link style={{ textDecoration: 'none', color: 'rgba(133, 133, 133, 1)' }} to='/new' >EDIT</Link></button>
+                {/* <button className='button'>EDIT</button> */}
                 <button className='button' onClick={() => {this.deleteNote(this.state.id)}} >DELETE</button>
             </div>
         )
