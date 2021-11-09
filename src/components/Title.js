@@ -3,7 +3,7 @@ import '../styles/Title.css'
 
 function Title() {
     return (
-        <h1 className='title'>EYETEMIZE</h1>
+        <h1 className='title title-active' id='title'>EYETEMIZE</h1>
     )
 }
 

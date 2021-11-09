@@ -23,14 +23,14 @@ class Notes extends Component {
     }
 
     removeNoteClass = () => {
-        const allNotes = document.querySelectorAll('.notes-list')
+        const allNotes = document.querySelectorAll('.notes-all')
         allNotes.forEach(element => {
             element.classList.remove('notes-back-color')
         })
     }
 
     iterateNoteTitles = () => {
-        const notesIt = this.props.notes.notes.map(n => <li className='notes-list' key={'note-' + n.id} id={'note-' + n.id} onClick={() => {this.onNoteClick(n.id)}}>{n.title}</li>)
+        const notesIt = this.props.notes.notes.map(n => <li className='notes-all' key={'note-' + n.id} id={'note-' + n.id} onClick={() => {this.onNoteClick(n.id)}}>{n.title}</li>)
         return notesIt
     }
 

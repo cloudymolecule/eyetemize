@@ -20,13 +20,7 @@ export const postNote = note => {
         fetch('http://127.0.0.1:3000/notes', {method: 'POST', body: note})
         .then(res => res.json())
         .then(data => {
-            // if (data.errors) {
-                // dispatch({ type: 'FORM_ERRORS', formErrors: data.errors})
-            // } else {
-                // dispatch({ type: 'ADD_PROPERTY', note})
-                console.log(data)
-            // }
-           
+            console.log(data)
         })
     }
 }

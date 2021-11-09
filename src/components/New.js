@@ -18,11 +18,12 @@ class New extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        console.log('submitted form')
         const formData = new FormData()
         formData.append('title', this.state.title)
         formData.append('content', this.state.content)
         this.props.postNote(formData)
+        this.handleReset(e)
+        this.successMessage()
     }
 
     handleReset = e => {
@@ -31,6 +32,18 @@ class New extends Component {
             title:'',
             content:''
         })
+    }
+
+    successMessage = () => {
+        const title = document.getElementById('title')
+        title.innerText = 'NOTE SAVED'
+        title.classList.add('title-saved')
+        title.classList.remove('title-active')
+        setTimeout(() => {
+            title.innerText = 'EYETEMIZE'
+            title.classList.remove('title-saved')
+            title.classList.add('title-active')
+        }, 3000);
     }
 
     render() {

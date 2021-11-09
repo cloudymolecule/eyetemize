@@ -4,6 +4,14 @@
         font-weight: 100;
         color: rgba(133, 133, 133, 1);
         letter-spacing: 0.2px;
+}
+
+.title-active {
         background: rgb(220,255,211);
         background: linear-gradient(360deg, rgba(220,255,211,1) 50%, rgba(167,255,167,1) 78%);
+}
+
+.title-saved {
+        background: rgb(52,255,0);
+        background: radial-gradient(circle, rgba(52,255,0,0) 3%, rgba(230,255,0,1) 28%, rgba(237,0,255,0) 81%);
 }
