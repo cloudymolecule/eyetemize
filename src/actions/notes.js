@@ -24,3 +24,12 @@ export const deleteNote = id => {
         .then(note => dispatch({ type: 'DELETE_NOTE', note}))
     }
 }
+
+export const editNote = note => {
+    return (dispatch) => {
+        dispatch({ type: 'SAVING_NOTE' })
+        fetch('http://127.0.0.1:3000/notes', {method: 'PATCH', body: note})
+        .then(res => res.json())
+        
+    }
+}

@@ -1,6 +1,6 @@
 import '../styles/Edit.css'
 import { connect } from 'react-redux'
-import { postNote } from '../actions/notes'
+import { editNote } from '../actions/notes'
 import React, { Component } from 'react'
 
 class New extends Component {
