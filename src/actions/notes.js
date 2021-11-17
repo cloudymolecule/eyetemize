@@ -26,10 +26,10 @@ export const deleteNote = id => {
 }
 
 export const editNote = note => {
+    console.log(note)
     return (dispatch) => {
         dispatch({ type: 'SAVING_NOTE' })
-        fetch('http://127.0.0.1:3000/notes', {method: 'PATCH', body: note})
+        fetch(`http://127.0.0.1:3000/notes/${note.id}`, {method: 'PATCH', body: note})
         .then(res => res.json())
-        
     }
 }

@@ -7,14 +7,16 @@ class New extends Component {
 
     state = {
         title: '',
-        content: ''
+        content: '',
+        id: ''
     }
 
     componentDidMount() {
         let currentNote = this.props.notes.notes.filter(n => n.id === parseInt(this.props.match.params.id))
          this.setState({
             title: currentNote[0].title,
-            content: currentNote[0].content
+            content: currentNote[0].content,
+            id: currentNote[0].id
         })
     }
 
@@ -26,12 +28,13 @@ class New extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        // const formData = edit FormData()
-        // formData.append('title', this.state.title)
-        // formData.append('content', this.state.content)
-        // this.props.postNote(formData)
-        // this.handleReset(e)
-        // this.successMessage()
+        const formData = new FormData()
+        formData.append('title', this.state.title)
+        formData.append('content', this.state.content)
+        formData.append('id', this.state.id)
+        this.props.editNote(formData)
+        this.handleReset(e)
+        this.successMessage()
     }
 
     handleReset = e => {
@@ -70,4 +73,4 @@ const mapStateToProps = state => ({
     loading: state.notes.loading
  })
 
-export default connect(mapStateToProps, { postNote })(New)
+export default connect(mapStateToProps, { editNote })(New)
